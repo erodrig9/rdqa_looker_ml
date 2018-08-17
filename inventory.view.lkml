@@ -456,6 +456,11 @@ view: inventory {
     sql: ${global_qty_on_hand} = 0 and (${global_atp}) = 0;;
   }
 
+  dimension: is_active {
+    type: yesno
+    sql: ${status.status_name} in ('new', 'active') ;;
+  }
+
   measure: total_count {
     type: count
     drill_fields: [inventory_id, description, global_atp]
