@@ -501,7 +501,7 @@ view: inventory {
   measure: inactive_count {
     type: count_distinct
     sql: ${inventory_id} ;;
-    drill_fields: [inventory_id, description, inventory_provider_xref.atp ]
+    drill_fields: [inventory_id, description, global_atp, sku_type.sku_type_name, is_active]
     filters: {
       field: is_active
       value: "no"
