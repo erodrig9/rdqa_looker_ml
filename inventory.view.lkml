@@ -488,6 +488,16 @@ view: inventory {
     }
   }
 
+  measure: active_count {
+    type: count_distinct
+    sql: ${inventory_id} ;;
+    drill_fields: [inventory_id, description, inventory_provider_xref.atp ]
+    filters: {
+      field: is_active
+      value: "yes"
+    }
+  }
+
   measure: percent_low {
     type:  number
     sql: ${low_count}*1.0 / NULLIF(${total_count}, 0) ;;
