@@ -1,5 +1,5 @@
 view: status {
-  sql_table_name: dbo.Status ;;
+  sql_table_name: edgeMaster.dbo.Status ;;
 
   dimension: status_id {
     primary_key: yes
