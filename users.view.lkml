@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: dbo.Users ;;
+  sql_table_name: edgemaster.dbo.Users ;;
 
   dimension: user_id {
     primary_key: yes
