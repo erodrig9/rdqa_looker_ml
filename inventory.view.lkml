@@ -456,9 +456,9 @@ view: inventory {
     sql: ${global_qty_on_hand} = 0 and (${global_atp}) = 0;;
   }
 
-  measure: count {
+  measure: total_count {
     type: count
-    drill_fields: [inventory_id, trademark_name, inventory_provider_xref.count]
+    drill_fields: [inventory_id, description, global_atp]
   }
 
   measure: low_count {
@@ -485,13 +485,13 @@ view: inventory {
 
   measure: percent_low {
     type:  number
-    sql: ${low_count}*1.0 / NULLIF(${count}, 0) ;;
+    sql: ${low_count}*1.0 / NULLIF(${total_count}, 0) ;;
     value_format_name: percent_2
   }
 
   measure: percent_not_low {
     type:  number
-    sql: ((NULLIF(${count}, 0) - ${low_count})*1.0) / NULLIF(${count}, 0) ;;
+    sql: ((NULLIF(${total_count}, 0) - ${low_count})*1.0) / NULLIF(${total_count}, 0) ;;
     value_format_name: percent_2
   }
 
