@@ -10,7 +10,7 @@ datagroup: rdqa_default_datagroup {
 
 persist_with: rdqa_default_datagroup
 
-explore:order_header  {
+explore: order_header  {
   join: order_line  {
     type: inner
     relationship: one_to_many
