@@ -469,7 +469,7 @@ view: inventory {
   measure: low_count {
     type: count_distinct
     sql: ${inventory_id} ;;
-    drill_fields: [inventory_id, description, inventory_provider_xref.atp ]
+    drill_fields: [inventory_id, description, providers.provider_name, inventory_provider_xref.atp ]
     filters: {
       field: is_low_stock
       value: "yes"
