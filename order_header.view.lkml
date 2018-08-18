@@ -315,6 +315,6 @@ view: order_header {
 
   measure: count {
     type: count
-    drill_fields: [autoship_order_header_id, order_header.autoship_order_header_id, order_header.count, order_line.count]
+    drill_fields: [order_header_id, order_type.order_type_name, vw_order_status.order_status_name, vw_order_total.total_sum]
   }
 }
