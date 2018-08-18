@@ -45,6 +45,7 @@ view: catalog {
   dimension: catalog_name {
     type: string
     sql: ${TABLE}.CatalogName ;;
+    drill_fields: [catalog_id, catalog_code, catalog_item, catalog_type.catalog_type_name]
   }
 
   dimension: catalog_notes {

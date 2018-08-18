@@ -23,6 +23,12 @@ explore: order_header  {
     sql_on: ${order_line.catalog_id} = ${catalog.catalog_id} ;;
   }
 
+  join: catalog_type {
+    type: inner
+    relationship: one_to_one
+    sql_on: ${catalog.catalog_type_id} = ${catalog_type.catalog_type_id} ;;
+  }
+
   join: order_type {
     type: inner
     relationship: one_to_one
