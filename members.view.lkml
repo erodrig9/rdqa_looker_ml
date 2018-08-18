@@ -376,7 +376,7 @@ view: members {
   dimension: full_name {
     type:  string
     sql:  ${name_first} + ' ' + ${name_last} ;;
-    drill_fields: [member_id, full_name, email]
+    drill_fields: [member_id, email]
   }
 
   measure: count {
