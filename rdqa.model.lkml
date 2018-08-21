@@ -70,6 +70,12 @@ explore: order_header  {
     relationship: one_to_one
     sql_on:  ${order_header.member_id} = ${members.member_id} ;;
   }
+
+  join: order_sources {
+    type: inner
+    relationship: one_to_one
+    sql_on: ${order_header.order_source_id} = ${order_sources.order_source_id} ;;
+  }
 }
 
 
