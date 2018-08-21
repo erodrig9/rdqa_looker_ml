@@ -89,6 +89,6 @@ view: vw_order_total {
   }
 
   set: order_set {
-    fields: [order_header_id, order_line.catalog_item, order_line.quantity]
+    fields: [order_header_id, order_line.catalog_item, order_line.quantity, order_line.unit_price]
   }
 }
