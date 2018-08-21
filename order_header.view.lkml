@@ -315,11 +315,17 @@ view: order_header {
 
   dimension: hours_since_last_order_processed {
     type: number
-    sql: DATEDIFF(HOUR, ${create_raw}, CURRENT_TIMESTAMP) ;;
+    sql: DATEDIFF(HOUR, ${create_raw}, GETUTCDATE()) ;;
   }
 
   measure: count {
     type: count
     drill_fields: [order_header_id, order_type.order_type_name, vw_order_status.order_status_name]
+  }
+
+  measure: min_hours_since_last_order_processed {
+    type:  min
+    sql: ${hours_since_last_order_processed} ;;
+    drill_fields: [order_header_id, order_type.order_type_name, vw_order_status.order_status_name, order_source.orde_source_name, create_time]
   }
 }

@@ -4,7 +4,7 @@ connection: "rdqa-int_edgerelease6i155trunk"
 include: "*.view"
 
 datagroup: rdqa_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+  # sql_trigger: SELECT MAX(id) FROM etl_log;; trigger alert if there is a result & different from last run
   max_cache_age: "1 hour"
 }
 
